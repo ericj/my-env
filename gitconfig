@@ -1,0 +1,45 @@
+[user]
+    name = kuanhung
+    email = ericj.tw@gmail.com
+
+[alias]
+    co = checkout
+    ci = commit
+    di = diff
+    st = status
+    br = branch
+    re = remote
+    dt = difftool
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    d = difftool
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+
+[github-import]
+    remote = origin
+
+[core]
+    excludesfile = /Users/ericj/.gitignore_global
+
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
+
+[mergetool "sourcetree"]
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
+
+[diff]
+    tool = vimdiff
+
+[difftool]
+    prompt = false
+
+[log]
+    date = local
+
+[push]
+	default = simple
