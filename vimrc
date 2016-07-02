@@ -3,11 +3,14 @@
 " BundleInstall!
 "--------------------------------------------------------------------
 set smartindent
+set ignorecase
 set tabstop=4
 set shiftwidth=4
 "set expandtab
 set bg=dark
-set hlsearch
+
+" NERDTree
+nmap <leader>e :<C-u>NERDTree<CR>
 
 " let backspace can delete char
 set backspace=indent,eol,start
@@ -26,8 +29,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " let backspace can delete char
 set backspace=indent,eol,start
-set backupdir=$HOME/.vim/backup/
-set directory=$HOME/.vim/swap/
 set nocompatible
 
 filetype off
@@ -56,7 +57,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
-
+Plugin 'chrisbra/vim-diff-enhanced'
 
 let g:seoul256_background = 233
 colorschem seoul256
@@ -79,8 +80,7 @@ if &term =~ "xterm.*"
     cmap <Esc>[201~ <nop>
 endif
 
-"if &term == "xterm*"
-"	set t_ts='\033k'
-"	set t_fs='\033\'
-"	set title
-"endif
+" EnhanceDiff started In Diff-Mode set diffexpr (plugin not loaded yet)
+if &diff
+    let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
+endif
