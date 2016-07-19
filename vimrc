@@ -8,33 +8,18 @@ set tabstop=4
 set shiftwidth=4
 "set expandtab
 set bg=dark
+
 set hlsearch
+hi MatchParen cterm=bold ctermbg=none ctermfg=yellow
 
-" NERDTree
-nmap <leader>e :<C-u>NERDTree<CR>
-
-" let backspace can delete char
-set backspace=indent,eol,start
-
-" Toggle paste with <ins>
-set pastetoggle=<ins>
-
-" Go to insert mode when <ins> pressed in normal mode
-nnoremap <silent> <ins> :setlocal paste!<CR>i
-
-" Switch paste mode off whenever insert mode is left
-autocmd InsertLeave <buffer> setlocal nopaste
-
-" Restore Last Position
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+set list lcs=tab:\|_
+set tags=./tags,tags;$HOME
 
 " Let backspace can delete char
 set backspace=indent,eol,start
 set nocompatible
 
 filetype off
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
 syntax enable
 set t_Co=256
 filetype plugin indent on     " required
@@ -85,3 +70,22 @@ endif
 if &diff
     let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
 endif
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
+" NERDTree
+nmap <leader>e :<C-u>NERDTree<CR>
+
+" Toggle paste with <ins>
+set pastetoggle=<ins>
+
+" Go to insert mode when <ins> pressed in normal mode
+nnoremap <silent> <ins> :setlocal paste!<CR>i
+
+" Switch paste mode off whenever insert mode is left
+autocmd InsertLeave <buffer> setlocal nopaste
+
+" Restore Last Position
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
