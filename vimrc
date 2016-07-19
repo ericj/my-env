@@ -8,6 +8,7 @@ set tabstop=4
 set shiftwidth=4
 "set expandtab
 set bg=dark
+set hlsearch
 
 " NERDTree
 nmap <leader>e :<C-u>NERDTree<CR>
@@ -27,7 +28,7 @@ autocmd InsertLeave <buffer> setlocal nopaste
 " Restore Last Position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
-" let backspace can delete char
+" Let backspace can delete char
 set backspace=indent,eol,start
 set nocompatible
 
