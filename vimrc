@@ -89,3 +89,6 @@ autocmd InsertLeave <buffer> setlocal nopaste
 " Restore Last Position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
+" setup pydict
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
+
