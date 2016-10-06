@@ -6,12 +6,13 @@ set smartindent
 set ignorecase
 set tabstop=4
 set shiftwidth=4
-"set expandtab
+set expandtab
 set bg=dark
 
 set hlsearch
 hi MatchParen cterm=bold ctermbg=none ctermfg=yellow
 
+" list chars 
 set list lcs=tab:\|_
 set tags=./tags,tags;$HOME
 
@@ -42,7 +43,7 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'bling/vim-airline'
-Plugin 'edkolev/tmuxline.vim'
+"Plugin 'edkolev/tmuxline.vim'
 Plugin 'chrisbra/vim-diff-enhanced'
 
 let g:seoul256_background = 233
@@ -89,6 +90,6 @@ autocmd InsertLeave <buffer> setlocal nopaste
 " Restore Last Position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
-" setup pydict
+" Setup pydict
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
