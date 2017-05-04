@@ -45,6 +45,8 @@ Plugin 'junegunn/seoul256.vim'
 Plugin 'bling/vim-airline'
 "Plugin 'edkolev/tmuxline.vim'
 Plugin 'chrisbra/vim-diff-enhanced'
+Plugin 'fatih/vim-go'
+Plugin 'vim-scripts/MultipleSearch'
 
 let g:seoul256_background = 233
 colorschem seoul256
