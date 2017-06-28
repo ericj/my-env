@@ -15,3 +15,7 @@ vim +BundleInstall +qall!
 
 echo "install oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+echo "creating tmux.conf soft link..."
+ln -sf $PWD/tmux.conf ~/.tmux.conf
+

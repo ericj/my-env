@@ -6,8 +6,9 @@ set smartindent
 set ignorecase
 set tabstop=4
 set shiftwidth=4
-set expandtab
+"set expandtab
 set bg=dark
+set encoding=utf-8
 
 set hlsearch
 hi MatchParen cterm=bold ctermbg=none ctermfg=yellow
@@ -46,6 +47,7 @@ Plugin 'bling/vim-airline'
 "Plugin 'edkolev/tmuxline.vim'
 Plugin 'chrisbra/vim-diff-enhanced'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
 
 let g:seoul256_background = 233
 colorschem seoul256
