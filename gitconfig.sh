@@ -9,7 +9,7 @@ git config --global alias.co checkout
 git config --global alias.ci commit
 
 # editor
-git config --global core.editor /usr/bin/vim
+git config --global core.editor /usr/local/bin/vim
 
 # difftool
 git config --global diff.tool vimdiff
