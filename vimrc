@@ -48,6 +48,9 @@ Plugin 'bling/vim-airline'
 Plugin 'chrisbra/vim-diff-enhanced'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-scripts/highlight.vim'
+" detect space or tab indent from buffer
+Plugin 'tpope/vim-sleuth'
 
 let g:seoul256_background = 233
 colorschem seoul256
@@ -89,6 +92,9 @@ nnoremap <silent> <ins> :setlocal paste!<CR>i
 
 " Switch paste mode off whenever insert mode is left
 autocmd InsertLeave <buffer> setlocal nopaste
+
+" Fix crontab edit
+autocmd filetype crontab setlocal nobackup nowritebackup
 
 " Restore Last Position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
