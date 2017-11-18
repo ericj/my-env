@@ -1,6 +1,6 @@
 #!/bin/sh
 #set -x
-PWD=`pwd`
+PWD=$(pwd)
 
 if ! [ -d "$HOME/.vim/bundle/vundle" ]; then
     echo "install vundle plugin for vim..."
@@ -8,7 +8,7 @@ if ! [ -d "$HOME/.vim/bundle/vundle" ]; then
 fi
 
 echo "creating vimrc soft link..."
-ln -sf $PWD/vimrc ~/.vimrc
+ln -sf "$PWD/vimrc ~/.vimrc"
 
 echo "vim :BundleInstall"
 vim +BundleInstall +qall!
@@ -17,5 +17,7 @@ echo "install oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 echo "creating tmux.conf soft link..."
-ln -sf $PWD/tmux.conf ~/.tmux.conf
+ln -sf "$PWD/tmux.conf ~/.tmux.conf"
 
+echo "cp my utils"
+ln -sf "$PWD/bin/myip" /usr/local/bin/myip
