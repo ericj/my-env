@@ -75,6 +75,7 @@ endif
 
 " EnhanceDiff started In Diff-Mode set diffexpr (plugin not loaded yet)
 if &diff
+    set diffopt+=iwhite
     let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
 endif
 
@@ -111,3 +112,12 @@ set statusline+=%*
 "let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+" Fix for syntastic c and YCM
+let g:ycm_show_diagnostics_ui = 0
+
+" modeline search line at beginning and ending
+set modeline
+set modelines=10
+
+" force tab
+:inoremap <S-Tab> <C-V><Tab>
