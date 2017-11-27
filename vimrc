@@ -32,7 +32,6 @@ call vundle#rc()
 
 " let Vundle manage Vundle, required
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
 Plugin 'gmarik/vundle'
 Plugin 'Pydiction'
 Plugin 'xml.vim'
@@ -44,13 +43,10 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'bling/vim-airline'
-"Plugin 'edkolev/tmuxline.vim'
 Plugin 'chrisbra/vim-diff-enhanced'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-scripts/highlight.vim'
-" detect space or tab indent from buffer
-Plugin 'tpope/vim-sleuth'
 Plugin 'mileszs/ack.vim'
 
 let g:seoul256_background = 233
