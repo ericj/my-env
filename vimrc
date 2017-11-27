@@ -51,6 +51,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-scripts/highlight.vim'
 " detect space or tab indent from buffer
 Plugin 'tpope/vim-sleuth'
+Plugin 'mileszs/ack.vim'
 
 let g:seoul256_background = 233
 colorschem seoul256
@@ -121,3 +122,6 @@ set modelines=10
 
 " force tab
 :inoremap <S-Tab> <C-V><Tab>
+
+"ack searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
