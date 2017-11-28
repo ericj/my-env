@@ -48,6 +48,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-scripts/highlight.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'xolox/vim-lua-ftplugin'
+Plugin 'xolox/vim-misc'
 
 let g:seoul256_background = 233
 colorschem seoul256
