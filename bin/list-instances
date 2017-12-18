@@ -1,0 +1,26 @@
+#!/bin/bash
+
+CMD="aws ec2 describe-instances --query
+	\"Reservations[].Instances[].[
+		join(',',Tags[?Key=='Name'].Value),
+		ImageId,
+		InstanceId,
+		Placement.AvailabilityZone,
+		InstanceType,
+		KeyName,
+		State.Name,
+		PublicIpAddress,
+		join(',',SecurityGroups[].GroupName)
+	]\"
+	 --output text"
+
+if [ "$1" == "-a" ]; then
+	for region in $(aws ec2 describe-regions --output text | cut -f3); do
+		echo "Querying $region ..."
+		eval $CMD --region $region
+	done
+else
+	eval $CMD
+fi
+
+
