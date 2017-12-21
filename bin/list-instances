@@ -10,9 +10,10 @@ CMD="aws ec2 describe-instances --query
 		KeyName,
 		State.Name,
 		PublicIpAddress,
+		LaunchTime,
 		join(',',SecurityGroups[].GroupName)
 	]\"
-	 --output text"
+	 --output table"
 
 if [ "$1" == "-a" ]; then
 	for region in $(aws ec2 describe-regions --output text | cut -f3); do
