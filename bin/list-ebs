@@ -1,0 +1,22 @@
+#!/bin/bash
+
+CMD="aws ec2 describe-volumes --query
+	\"Volumes[].[
+	    VolumeId,
+	    VolumeType,
+	    AvailabilityZone,
+	    CreateTime,
+	    Size
+	]\"
+	 --output table"
+
+if [ "$1" == "-a" ]; then
+	for region in $(aws ec2 describe-regions --output text | cut -f3); do
+		echo "Querying $region ..."
+		eval $CMD --region $region
+	done
+else
+	eval $CMD
+fi
+
+
