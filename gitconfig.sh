@@ -20,3 +20,7 @@ git config --global alias.d difftool
 git config --global merge.tool vimdiff
 git config --global merge.conflictstyle diff3
 git config --global mergetool.prompt false
+
+# global ignore
+git config --global core.excludesfile '~/.gitignore'
+
