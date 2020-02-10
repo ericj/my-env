@@ -123,3 +123,6 @@ set modelines=10
 
 "ack searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" Fix escapestring + f not move cursor to next work
+map f w
