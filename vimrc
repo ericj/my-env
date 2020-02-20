@@ -50,6 +50,7 @@ Plugin 'vim-scripts/highlight.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'xolox/vim-misc'
+Plugin 'tpope/vim-surround'
 
 let g:seoul256_background = 233
 colorschem seoul256
@@ -126,3 +127,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Fix escapestring + f not move cursor to next work
 map f w
+
+" Add $ as keyword, so that ciw can include it
+set iskeyword +=$
+
