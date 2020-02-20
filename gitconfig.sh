@@ -22,7 +22,7 @@ git config --global merge.conflictstyle diff3
 git config --global mergetool.prompt false
 
 # global ignore
-git config --global core.excludesfile '$HOME/.gitignore'
+git config --global core.excludesfile '~/.gitignore'
 
 # git br output
 git config --global pager.branch false
