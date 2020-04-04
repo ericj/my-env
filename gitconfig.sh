@@ -27,3 +27,8 @@ git config --global core.excludesfile '~/.gitignore'
 # git br output
 git config --global pager.branch false
 
+# force config email per repository
+git config --global user.useConfigOnly true
+git config --global --unset user.name
+git config --global --unset user.email
+git config --global --unset user.signingkey
