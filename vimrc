@@ -6,7 +6,7 @@ set smartindent
 set ignorecase
 set tabstop=4
 set shiftwidth=4
-"set expandtab
+set expandtab
 set bg=dark
 set encoding=utf-8
 
