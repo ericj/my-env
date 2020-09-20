@@ -1,0 +1,12 @@
+# git untracking ingored files
+# MACOS
+.DS_Store
+# vscode settings
+.vscode/
+# PYTHON VIRTUAL PATH
+*.egg-info/
+.python-version
+.env
+# bytecode, cache
+*.py[cod]
+__pycache__/

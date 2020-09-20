@@ -21,3 +21,6 @@ ln -sf "$PWD/tmux.conf" "$HOME/.tmux.conf"
 
 echo "cp my utils"
 ln -sf "$PWD/bin/myip" /usr/local/bin/myip
+
+echo "creating gitignore soft link"
+ln -sf "$PWD/gitignore" "$HOME/.gitignore"
