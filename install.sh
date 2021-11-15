@@ -20,7 +20,7 @@ echo "creating tmux.conf soft link..."
 ln -sf "$PWD/tmux.conf" "$HOME/.tmux.conf"
 
 echo "cp my utils"
-ln -sf "$PWD/bin/myip" /usr/local/bin/myip
+ln -sf "$PWD/bin" $HOME/bin
 
 echo "creating gitignore soft link"
 ln -sf "$PWD/gitignore" "$HOME/.gitignore"
