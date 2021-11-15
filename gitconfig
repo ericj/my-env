@@ -3,15 +3,16 @@
     email = ericj.tw@gmail.com
 
 [alias]
+    br = branch
     co = checkout
     ci = commit
+    d  = difftool
     di = diff
-    st = status
-    br = branch
-    re = remote
     dt = difftool
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-    d = difftool
+    re = remote
+    st = status
+    sw = switch
 
 [color]
     diff = auto

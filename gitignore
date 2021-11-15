@@ -10,3 +10,9 @@
 # bytecode, cache
 *.py[cod]
 __pycache__/
+.venv
+.python-version
+# precommit
+.pre-commit-config.yaml
+# tox
+.tox

@@ -39,10 +39,10 @@ Plugin 'gmarik/vundle'
 Plugin 'honza/vim-snippets'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'mileszs/ack.vim'
+"Plugin 'mileszs/ack.vim'
 Plugin 'Pydiction'
-Plugin 'rickhowe/diffchar.vim'
-Plugin 'shawncplus/phpcomplete.vim'
+"Plugin 'rickhowe/diffchar.vim'
+"Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'taglist.vim'
 Plugin 'The-NERD-tree'
 Plugin 'tpope/vim-surround'
@@ -50,8 +50,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-scripts/highlight.vim'
 Plugin 'xml.vim'
-Plugin 'xolox/vim-lua-ftplugin'
-Plugin 'xolox/vim-misc'
+"Plugin 'xolox/vim-lua-ftplugin'
+"Plugin 'xolox/vim-misc'
 
 let g:seoul256_background = 233
 colorschem seoul256
@@ -60,23 +60,23 @@ colorschem seoul256
 set laststatus=2
 
 "" vim bracketed paste
-if &term =~ "xterm.*"
-    let &t_ti = &t_ti . "\e[?2004h"
-    let &t_te = "\e[?2004l" . &t_te
-    function XTermPasteBegin(ret)
-        set pastetoggle=<Esc>[201~
-        set paste
-        return a:ret
-    endfunction
-    map <expr> <Esc>[200~ XTermPasteBegin("i")
-    imap <expr> <Esc>[200~ XTermPasteBegin("")
-    cmap <Esc>[200~ <nop>
-    cmap <Esc>[201~ <nop>
-endif
+"if &term =~ "xterm.*"
+"    let &t_ti = &t_ti . "\e[?2004h"
+"    let &t_te = "\e[?2004l" . &t_te
+"    function XTermPasteBegin(ret)
+"        set pastetoggle=<Esc>[201~
+"        set paste
+"        return a:ret
+"    endfunction
+"    map <expr> <Esc>[200~ XTermPasteBegin("i")
+"    imap <expr> <Esc>[200~ XTermPasteBegin("")
+"    cmap <Esc>[200~ <nop>
+"    cmap <Esc>[201~ <nop>
+"endif
 
 " EnhanceDiff started In Diff-Mode set diffexpr (plugin not loaded yet)
 if &diff
-    set diffopt+=iwhite
+"    set diffopt+=iwhite
     let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
 endif
 
@@ -132,3 +132,4 @@ map f w
 " Add $ as keyword, so that ciw can include it
 set iskeyword +=$
 
+let g:snipMate = { 'snippet_version' : 1 }
