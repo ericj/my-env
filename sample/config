@@ -1,0 +1,96 @@
+Host *
+    UseKeychain yes
+    AddKeysToAgent yes
+    ServerAliveInterval 120
+
+Host mbp
+    User kuanhung
+    HostName 192.168.1.201
+    IdentityFile ~/.ssh/id_rsa
+
+Host mbpr
+    User kuanhung
+    HostName 192.168.1.162
+    IdentityFile ~/.ssh/id_rsa
+
+Host openwrt
+    User root
+    HostName 192.168.1.1
+
+Host ericj-github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ericj_github
+    IdentitiesOnly yes
+
+Host dsgithub.trendmicro.com
+    HostName dsgithub.trendmicro.com
+    User git
+    IdentityFile ~/.ssh/id_dsgithub
+    IdentitiesOnly yes
+    ProxyCommand ssh mbpr -W %h:%p
+
+Host 10.209.*
+    User root
+    ProxyCommand ssh jump -W %h:%p
+
+Host jump
+    User kuanhungc
+    HostName 10.201.36.32
+    Compression yes
+    IdentityFile ~/.ssh/id_ds_20210217
+    ProxyCommand ssh mbpr -W %h:%p
+
+Host i-*
+  ProxyCommand sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"
+  User kuanhung_chen
+  IdentityFile ~/.ssh/id_mbpr19
+  ServerAliveInterval 30
+  ForwardAgent yes
+
+Host scrh
+  User root
+  HostName 10.209.72.239
+  IdentityFile ~/.ssh/id_ds_20210217
+  IdentitiesOnly yes
+  ProxyJump jump
+  Compression yes
+
+Host scub
+  User kuanhung
+  HostName 10.209.72.240
+  IdentityFile ~/.ssh/id_ds_20210217
+  IdentitiesOnly yes
+  ProxyJump jump
+  Compression yes
+
+Host scub2
+  User kuanhung
+  HostName 10.209.72.243
+  IdentityFile ~/.ssh/id_ds_20210217
+  IdentitiesOnly yes
+  ProxyJump jump
+  Compression yes
+
+Host scub3
+  User kuanhung
+  HostName 10.209.72.244
+  IdentityFile ~/.ssh/id_ds_20210217
+  IdentitiesOnly yes
+  ProxyJump jump
+  Compression yes
+
+Host scub-dns
+  User kuanhung
+  HostName 10.209.72.241
+  IdentityFile ~/.ssh/id_ds_20210217
+  IdentitiesOnly yes
+  ProxyJump jump
+
+Host scub-squid
+  User kuanhung
+  HostName 10.209.72.242
+  IdentityFile ~/.ssh/id_ds_20210217
+  IdentitiesOnly yes
+  ProxyJump jump
+
